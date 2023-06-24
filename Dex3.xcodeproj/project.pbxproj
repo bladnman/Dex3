@@ -13,6 +13,7 @@
 		41698F982A4749C10062F28C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41698F972A4749C10062F28C /* Preview Assets.xcassets */; };
 		41698F9A2A4749C10062F28C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41698F992A4749C10062F28C /* Persistence.swift */; };
 		41698F9D2A4749C10062F28C /* Dex3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41698F9B2A4749C10062F28C /* Dex3.xcdatamodeld */; };
+		41E64AD12A4758C6003C9E76 /* TempPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E64AD02A4758C6003C9E76 /* TempPokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		41698F972A4749C10062F28C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41698F992A4749C10062F28C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		41698F9C2A4749C10062F28C /* Dex3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dex3.xcdatamodel; sourceTree = "<group>"; };
+		41E64AD02A4758C6003C9E76 /* TempPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,10 @@
 			children = (
 				41698F902A4749C00062F28C /* Dex3App.swift */,
 				41698F922A4749C00062F28C /* ContentView.swift */,
-				41698F942A4749C10062F28C /* Assets.xcassets */,
+				41E64AD02A4758C6003C9E76 /* TempPokemon.swift */,
 				41698F992A4749C10062F28C /* Persistence.swift */,
 				41698F9B2A4749C10062F28C /* Dex3.xcdatamodeld */,
+				41698F942A4749C10062F28C /* Assets.xcassets */,
 				41698F962A4749C10062F28C /* Preview Content */,
 			);
 			path = Dex3;
@@ -145,6 +148,7 @@
 			files = (
 				41698F9A2A4749C10062F28C /* Persistence.swift in Sources */,
 				41698F9D2A4749C10062F28C /* Dex3.xcdatamodeld in Sources */,
+				41E64AD12A4758C6003C9E76 /* TempPokemon.swift in Sources */,
 				41698F932A4749C00062F28C /* ContentView.swift in Sources */,
 				41698F912A4749C00062F28C /* Dex3App.swift in Sources */,
 			);
