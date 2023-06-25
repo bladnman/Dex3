@@ -32,8 +32,12 @@ class PokemonViewModel: ObservableObject {
         self.status = .fetching
 
         do {
-            var pokedex = try await self.controller.fetchAllPokemon()
+            guard var pokedex = try await self.controller.fetchAllPokemon() else {
+                self.status = .success
+                return
+            }
 
+            // CREATE POKEMON and save in CoreData
             pokedex.sort { $0.id < $1.id }
 
             for pokemon in pokedex {
@@ -41,7 +45,10 @@ class PokemonViewModel: ObservableObject {
                 let newPokemon = Pokemon(context: viewContext)
                 newPokemon.id = Int16(pokemon.id)
                 newPokemon.name = pokemon.name
+
                 newPokemon.types = pokemon.types
+                newPokemon.organizeTypes()
+
                 newPokemon.hp = Int16(pokemon.hp)
                 newPokemon.attack = Int16(pokemon.attack)
                 newPokemon.defense = Int16(pokemon.defense)
@@ -55,7 +62,10 @@ class PokemonViewModel: ObservableObject {
                 try viewContext.save()
             }
 
+            self.status = .success
+
         } catch {
+            print("Error.. \(error)")
             self.status = .failed(error: error)
         }
     }

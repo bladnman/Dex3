@@ -5,6 +5,7 @@
 //  Created by Matt Maher on 6/24/23.
 //
 
+import CoreData
 import Foundation
 
 struct FetchController {
@@ -14,9 +15,14 @@ struct FetchController {
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
-    func fetchAllPokemon() async throws -> [TempPokemon] {
+    func fetchAllPokemon() async throws -> [TempPokemon]? {
+        
+        if havePokemon() {
+            return nil
+        }
+        
         var allPokemon: [TempPokemon] = []
-        let data = try await getFetchedData(baseURL, qsDict: ["limit": "386"])
+        let data = try await getFetchedData(baseURL, qsDict: ["limit": "386"]) // 386 in first 3 versions
 
         guard let pokeDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any],
               let pokedex = pokeDictionary["results"] as? [[String: String]]
@@ -67,5 +73,21 @@ struct FetchController {
         }
 
         return data
+    }
+
+    private func havePokemon() -> Bool {
+        let context = PersistenceController.shared.container.newBackgroundContext()
+
+        let fetchRequest: NSFetchRequest<Pokemon> = Pokemon.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id IN %@", [1, 386])
+
+        do {
+            let pokemon = try context.fetch(fetchRequest)
+            return pokemon.count == 2
+        } catch {
+            print("Failed fetching local pokemon: \(error)")
+        }
+
+        return false
     }
 }

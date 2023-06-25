@@ -9,6 +9,7 @@ import CoreData
 import SwiftUI
 
 struct PokemonDetail: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var pokemon: Pokemon
     @State var showShiny = false
 
@@ -44,8 +45,33 @@ struct PokemonDetail: View {
                 }
 
                 Spacer()
+
+                Button {
+                    withAnimation {
+                        pokemon.favorite.toggle()
+
+                        // save changes!
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            let nsError = error as NSError
+                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    }
+                } label: {
+                    Image(systemName: pokemon.favorite ? "star.fill" : "star")
+                }
+                .font(.largeTitle)
+                .foregroundColor(.yellow)
             }
             .padding()
+
+            Text("Stats")
+                .font(.title)
+                .padding(.bottom, -7)
+
+            Stats()
+                .environmentObject(pokemon)
         }
         .navigationTitle(pokemon.name!.capitalized)
         .toolbar {

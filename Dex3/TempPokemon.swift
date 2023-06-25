@@ -6,7 +6,6 @@
 // example
 // https://pokeapi.co/api/v2/pokemon/bulbasaur
 
-
 import Foundation
 
 struct TempPokemon: Codable {
@@ -61,8 +60,8 @@ struct TempPokemon: Codable {
         var decodedTypes: [String] = []
         var typesContainer = try container.nestedUnkeyedContainer(forKey: .types)
         while !typesContainer.isAtEnd {
-            var typesDictionaryContainer = try typesContainer.nestedContainer(keyedBy: PokemonKeys.TypeDictionaryKeys.self)
-            var typeContainer = try typesDictionaryContainer.nestedContainer(keyedBy: PokemonKeys.TypeDictionaryKeys.TypeKeys.self, forKey: .type)
+            let typesDictionaryContainer = try typesContainer.nestedContainer(keyedBy: PokemonKeys.TypeDictionaryKeys.self)
+            let typeContainer = try typesDictionaryContainer.nestedContainer(keyedBy: PokemonKeys.TypeDictionaryKeys.TypeKeys.self, forKey: .type)
 
             let type = try typeContainer.decode(String.self, forKey: .name)
             decodedTypes.append(type)

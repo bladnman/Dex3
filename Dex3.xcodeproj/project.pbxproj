@@ -19,6 +19,7 @@
 		41E64AD72A47BCF1003C9E76 /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E64AD62A47BCF1003C9E76 /* PokemonDetail.swift */; };
 		41E64AD92A47BE6F003C9E76 /* SamplePokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E64AD82A47BE6F003C9E76 /* SamplePokemon.swift */; };
 		41E64ADB2A47C424003C9E76 /* Pokemon+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E64ADA2A47C424003C9E76 /* Pokemon+Ext.swift */; };
+		41E64ADD2A4878C9003C9E76 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E64ADC2A4878C9003C9E76 /* Stats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		41E64AD62A47BCF1003C9E76 /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
 		41E64AD82A47BE6F003C9E76 /* SamplePokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePokemon.swift; sourceTree = "<group>"; };
 		41E64ADA2A47C424003C9E76 /* Pokemon+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon+Ext.swift"; sourceTree = "<group>"; };
+		41E64ADC2A4878C9003C9E76 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				41698F902A4749C00062F28C /* Dex3App.swift */,
 				41698F922A4749C00062F28C /* ContentView.swift */,
 				41E64AD62A47BCF1003C9E76 /* PokemonDetail.swift */,
+				41E64ADC2A4878C9003C9E76 /* Stats.swift */,
 				41E64AD82A47BE6F003C9E76 /* SamplePokemon.swift */,
 				41E64AD02A4758C6003C9E76 /* TempPokemon.swift */,
 				41698F992A4749C10062F28C /* Persistence.swift */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41698F9A2A4749C10062F28C /* Persistence.swift in Sources */,
+				41E64ADD2A4878C9003C9E76 /* Stats.swift in Sources */,
 				41698F9D2A4749C10062F28C /* Dex3.xcdatamodeld in Sources */,
 				41E64AD72A47BCF1003C9E76 /* PokemonDetail.swift in Sources */,
 				41E64ADB2A47C424003C9E76 /* Pokemon+Ext.swift in Sources */,
